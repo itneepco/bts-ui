@@ -1,0 +1,96 @@
+<mvc:View controllerName="bts.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    xmlns:k="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz="sap.viz.ui5.controls" 
+    xmlns:chart="sap.suite.ui.commons"
+    >
+    <Page id="page" showHeader="false" enableScrolling="false" class="sapBlueCrystalBackground" backgroundDesign="Transparent">
+
+
+        <HBox id="_IDGenHBox709"  width="auto">
+            <Image id='_HeaderImg1' src="{imageModel>/path}/images/bts.jpg" width="100%" height="100%" />
+        </HBox>
+
+        <k:SimpleForm id="addUserForm1" maxContainerCols="1" editable="true" layout="ResponsiveGridLayout"  >
+            <k:content>
+                <HBox id="Menu"  width="100%">
+                    
+                    <GenericTile id="GenericTile1" class="sapUiTinyMarginBegin" header="Create" press="Createpress">
+                        <TileContent id="TileContent1" >
+                            <ImageContent id="_IDGenImageContent1" src="sap-icon://create-form" />
+                        </TileContent>
+                    </GenericTile>
+
+                    <GenericTile id="GenericTile3" class="sapUiTinyMarginBegin"  header="Edit" press="Editpress">
+                        <TileContent id="TileContent3"  >
+                            <NumericContent id="_IDGenNumericContent2" icon="sap-icon://write-new-document" withMargin="false" />
+                        </TileContent>
+                    </GenericTile>
+
+                    <GenericTile id="GenericTile2" class="sapUiTinyMarginBegin" header="Display" press="Displaypress" >
+                        <TileContent id="TileContent2"  >
+                            <NumericContent id="_IDGenNumericContent1" icon="sap-icon://order-status" withMargin="false"  />
+                        </TileContent>
+                    </GenericTile>
+
+
+                </HBox>
+            </k:content>
+        </k:SimpleForm>
+
+        <!-- <VBox id="v1">
+            <chart:ChartContainer id="chartContainer" showFullScreen="true" showZoom="false" title="Bill Tracking System Report">
+               <chart:ChartContainerContent id="c1">
+                   <chart:content>
+                        <viz:VizFrame id="idpiechart" width="auto"
+                        uiConfig="{applicationSet:'fiori'}" vizType="pie"
+                        vizProperties="{
+                            plotArea:{
+                                                dataLabel:{visible: true,type:'value'},
+                                                drawingEffect: 'glossy'
+                                    },
+                                                title : {text:'Pending Invoices by Billing Location'}
+                                }"
+                                selectData="myOnClickHandler" 
+                                renderComplete="handleRenderComplete"
+                        >
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset id="flattenData" data="{StatusModel>/Items}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition id="d1" name="PRCTR" value="{StatusModel>PRCTR}" />
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition id="d2" name="Count" value="{StatusModel>Count}" />
+                                    </viz.data:measures>
+                                    </viz.data:FlattenedDataset> 
+                                </viz:dataset>
+                            
+                            <viz:feeds>
+                                <viz.feeds:FeedItem id="f1" uid="size" type="Measure" values="Count" />
+                                    <viz.feeds:FeedItem id="f2" uid="color" type="Dimension" values="PRCTR" />
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </chart:content>
+                </chart:ChartContainerContent>
+            </chart:ChartContainer>
+        </VBox> -->
+
+    
+        <footer >
+            <OverflowToolbar id="_IDGenOverflowToolbar1" class="sapUiMediumMarginTop">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                <Link id="_IDGenLink1" class="LinkHbox" text="Copyright © 2017 - North Eastern Electric Power Corporation Limited" target="_blank" href="https://neepco.co.in/" />
+                <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+
+</mvc:View>

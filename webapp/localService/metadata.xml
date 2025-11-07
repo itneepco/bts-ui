@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZBTS_ODATA_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="ZBTS_CRT" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BTS_ID"/>
+                    <PropertyRef Name="DRAFT_ID"/>
+                    <PropertyRef Name="MBLNR"/>
+                    <PropertyRef Name="LBLNI"/>
+                </Key>
+                <Property Name="BTS_ID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BTS ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DRAFT_ID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="DRAFT ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EBELN" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MBLNR" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="GRN Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LBLNI" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="SES Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZAMT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="XBLNR" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Invoice Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDATE" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LIFNR" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vendor Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NAME1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vendor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PRCTR" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Profit Center" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZTEXT" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Invoice Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZREMARK" Type="Edm.String" Nullable="false" MaxLength="300" sap:unicode="false" sap:label="BTS Remarks" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="STATUS" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="BTS STATUS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZpridSh" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PRCTR"/>
+                </Key>
+                <Property Name="PRCTR" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Profit Center" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZEID" Type="Edm.String" Nullable="false" MaxLength="110" sap:unicode="false" sap:label="Email ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZBTS_ODATA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZBTS_CRTSet" EntityType="ZBTS_ODATA_SRV.ZBTS_CRT" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZpridShSet" EntityType="ZBTS_ODATA_SRV.ZpridSh" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://10.60.42.67:8000/sap/opu/odata/sap/ZBTS_ODATA_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://10.60.42.67:8000/sap/opu/odata/sap/ZBTS_ODATA_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

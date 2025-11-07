@@ -1,0 +1,189 @@
+/* Enter your custom styles here */
+.tileLayout{
+    float: right;
+    font-size: 40pt;
+}
+
+.label {
+    align-items: center;
+    color: black;
+    font-weight: bold !important;
+}
+
+
+.customTable {
+  border: 1px solid #b1abab; /* Black border with 10px width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.customTable .sapMListTblHeaderCell, 
+.customTable .sapMListTblDataCell,
+.customTable .sapMListTblRow,
+.customTable .sapMListTblRow > .sapMListTblCell {
+    border: 1px solid #b1abab; /* Black border with 1px width */
+}
+
+
+.LinkHbox{
+  color: black;
+}
+
+.save{
+  align-items: center;
+  margin-top: 10%;
+}
+
+.buttonSpacing {
+  margin-top: 10px;
+  margin-right: 10px; /* Adjust the margin as per your spacing preference */
+}
+
+.inputPanel {
+  margin-top: 10px;
+  margin-right: 2px;
+  width: 100%;
+}
+
+.buttonLogOut {
+  margin-top: 20px;
+  margin-right: 10px; /* Adjust the margin as per your spacing preference */
+}
+
+.back {
+  margin-top: 10px;
+  margin-left: 10px; /* Adjust the margin as per your spacing preference */
+}
+
+.tableHeader{
+  justify-content: center;
+  border: 1px solid #d6cdcd; /* Black border with 10px width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.sapBlueCrystalBackground {
+  background-color: #e6ebef; /* This is an approximation of the SAP Blue Crystal color */
+}
+
+.pagestyle{
+  color: #e02532;
+}
+
+.customMarginRight {
+  margin-right: 1rem; /* Adjust the value as needed */
+}
+
+.customCheckBoxTextColor {
+  color: black  /* Ensures override of SAPUI5 default styles */
+}
+
+.center-hbox{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  width: 100%; /* Take full width of the parent to allow centering */
+  
+}
+
+.noInputDatePicker .sapMInputBaseInner {
+  pointer-events: none;
+}
+
+.small-font-size {
+  font-size: 0.50rem; /* Adjust the size as needed */
+}
+
+.tableHeader .sapMListTblHeaderCell, 
+.tableHeader .sapMListTblDataCell,
+.tableHeader .sapMListTblRow,
+.tableHeader .sapMListTblRow > .sapMListTblCell {
+    border: 1px solid #d6cdcd; /* Black border with 1px width */ 
+}
+
+.tableHeader .sapMText{
+  font-size: 11px;
+}
+
+.tableHeader th{
+  background-color: rgb(201, 195, 195);
+  font-weight: bold;
+  font-size: medium;
+}
+
+.customTable th{
+  background-color: rgb(201, 195, 195);
+  font-weight: bold;
+  font-size: medium;
+}
+
+.customTable th .sapMListTblHeaderCell{
+  
+  font-weight: bold;
+  font-size: medium;
+}
+
+.page{
+  height: 1px;
+}
+
+.smallText {
+  font-size: 0.75rem; /* Adjust the size as needed */
+}
+
+/* Mobile */
+.VBOX {
+  padding: 2px;
+  padding-top: 0px;
+}
+
+.VBOX1 {
+  padding-top: 0px;
+}
+
+/* Tablet */
+@media (min-width:600px) {
+  .VBOX {
+    padding-top:0px;
+      padding: 20px;
+  }
+}
+
+/* Desktop */
+@media (min-width:900px) {
+  .VBOX {
+    padding-top:0px;
+    padding-left: 270px;
+    padding-right: 270px;
+  }
+}
+
+.sapMFlexBoxAlignItemsCenter.sapMVBox>.sapMFlexItem {
+  max-width: 95%;
+}
+
+.CheckBox .sapMCbBg {
+   background-color: #f9fafc;  /* SAP Blue */
+   border-color: #0057b7;      /* Darker blue border */
+}
+
+.CheckBox .sapMCbMark {
+   color: white; /* White tick for contrast */
+}
+
+.CheckBox{
+  /* margin-left: 20px !important; 
+  padding-left: 20px !important; */
+  font-weight: bold;
+}
+
+.CheckBox .sapMLabel{
+  color: #07447e;
+  font-weight: normal;
+}
+
+/* .VCode{
+  padding-right: 20px !important;
+} */
+
+/* .uploadInput{
+  padding-top: 14px;
+ 
+} */

@@ -1,0 +1,225 @@
+<mvc:View controllerName="bts.controller.Edit"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
+    xmlns:semantic="sap.f.semantic">
+
+    <Page id="Page" enableScrolling="true" showHeader="false" class="sapUiResponsivePadding sapBlueCrystalBackground" backgroundDesign="Transparent" >
+
+        <HBox id="_IDGenHBox709"  width="auto">
+            <Image id='_HeaderImg1' src="{imageModel>/path}/images/bts.jpg" width="100%" height="100%" />
+        </HBox>
+
+        <VBox id="_IDGenVBox1"  alignItems="Center" fitContainer="true" class="sapMFlexBoxAlignItemsCenter">
+            <l:Grid id="Grid1" defaultSpan="XL6 L6 M6 S12" class="sapUiSmallMargin">
+                <f:SimpleForm id="addUserForm" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" columnsL="1" singleContainerFullSize="false">
+                        <f:content>
+                            <Label id="DraftID" text="Draft ID " required="true" class="label" />
+                            <Input id="DraftCode"  maxLength="10" change="onDraftIDChange" valueState="None" type="Number" showSuggestion="true" showValueHelp="true" valueHelpRequest="onDraftIDHelpRequest" required="true" liveChange="onInputChange"/>
+
+                            <Label id="POlabel" text="PO No " required="true" class="label" />
+                            <Input id="PO" liveChange="onInputChange" editable="false" showSuggestion="true" showValueHelp="true" valueHelpRequest="onPOHelpRequest" />
+
+                            <Label id="Datelabel" text="Date " required="true" class="label" />
+                            <DatePicker id="DateField" class="noInputDatePicker" maxDate="{dateModel>/maxDate}" editable="false" change="onDateInputChange" displayFormat="dd.MM.yyyy" valueFormat="yyyy-MM-dd" />
+                            
+                            <Label id="vendorEmaillabel" text="Vendor Email " required="true" class="label" />
+                            <Input id="vendorEmail" editable="false"  />
+                            
+                            <Label id="Profitlabel" text="Billing Location " class="label" />
+                            <Input id="Profit" liveChange="onInputChange" editable="false" showSuggestion="true" showValueHelp="true" valueHelpRequest="onProfitCenterHelpRequest" />
+
+                            <Label id="EmailLabel" text="Paying Authority Email Address " required="true" class="label" />
+                            <Input id="Email" liveChange="onInputChange" editable="false" />
+
+                            <!-- <Label id="SESAmtlabel" text="Previous SES Amount" class="label" />
+                            <Input id="SESAmount"  editable="false" />
+
+                            <Label id="GRNAmtlabel" text="Previous GRN Amount" class="label" />
+                            <Input id="GRNAmount"  editable="false" /> -->
+
+                            <Label id="AdvancePaymentLabel" text="100% Advance Payment?" required="true" class="label" />
+                            <Select id="paymentMethodSelect" 
+                                    selectedKey="" 
+                                    enabled="false" 
+                                    change="onSelectChange">
+                                <items>
+                                    <core:Item id="dd1" key="" text="" />
+                                    <core:Item id="dd2" key="Yes" text="Yes" />
+                                    <core:Item id="dd3" key="No" text="No" />
+                                    
+                                </items>
+                            </Select>
+
+                            <Label id="GeMInvNoFlag" text="Whether GeM Procurement?" required="true" class="label" />
+                            <Select id="GeM_Procurement" 
+                                    selectedKey="" 
+                                    enabled="false" 
+                                    change="onSelectChange1">
+                                <items>
+                                    <core:Item id="Gem1" key="" text="" />
+                                    <core:Item id="Gem2" key="Yes" text="Yes" />
+                                    <core:Item id="Gem3" key="No" text="No" />
+                                </items>
+                            </Select> 
+
+                        </f:content>
+                </f:SimpleForm>
+
+                <f:SimpleForm id="addUserForm1" layout="ResponsiveGridLayout" labelSpanL="3" columnsL="1">
+                        <f:content>
+                            <Label id="VendorCodeLabel" text="Vendor Code " required="true" class="label" />
+                            <!-- <HBox id="_IDGenHBox3" alignItems="Center"> -->
+                                <Input id="VendorCode" editable="false" class="VCode" liveChange="onVendorChange" maxLength="10" change="onVendorCodeChange" valueState="None" type="Number" showSuggestion="true" showValueHelp="true" valueHelpRequest="onVendorCodeHelpRequest" required="true" />
+                                
+                            <!-- </HBox> -->
+                            <Label id="vendorNamelabel" text="Vendor Name " class="label" />
+                            <TextArea id="vendorName" editable="false" rows="2" cols="26" liveChange="onInputChange" />
+
+                            <Label id="vendorPhnolabel" text="Vendor Phone Number " required="true" class="label" />
+                            <Input id="vendorPhno" editable="false" />
+
+                            <Label id="Remarkslabel" text="Remarks " required="true" class="label" />
+                            <TextArea id="Remarks" rows="4" maxLength="300" editable="false" liveChange="onInputChange" />
+
+                            <!-- <Label id="sesamtlabel" text="Total SES Amount" class="label" />
+                            <Input id="totsesamt"  editable="false" />
+
+                            <Label id="grnamttlabel" text="Total GRN Amount" class="label" />
+                            <Input id="totgrnamt"  editable="false" /> -->
+
+                            <Label id="PlantLabel" text="Plant " required="true" class="label" />
+                            <Input id="Plant" change="onPlantChange" class="noInputDatePicker" editable="false" maxLength="4" valueState="None" type="Number" showSuggestion="true" showValueHelp="true" valueHelpRequest="onPlantHelpRequest" required="true" />
+                        
+                            <Label id="GeMInvNo" text="GeM Invoice Number" required="true" class="label" />
+                            <Input id="GemInvNo" visible="false" editable="false" maxLength="60"/> 
+                        </f:content>
+                </f:SimpleForm>
+            </l:Grid>
+
+            <HBox id="TableContainer" justifyContent="Center" alignItems="Center" width="160%">
+                <HBox id="TableContainer1" justifyContent="Center" alignItems="Center" width="160%">
+                    <VBox id="ButtonVbox1" fitContainer="true" >
+                        <ScrollContainer id="s1">
+                            <Table id="DraftTable1"  class="customTable" width="auto" >
+                                <columns>
+                                    <Column id="c1" width="auto" hAlign="Center">
+                                        <Text id="t1" text="Invoice Number" class="label"/>
+                                    </Column>
+                                    <Column id="c6" width="auto" hAlign="Center">
+                                        <Text id="t6" text="Invoice Text" class="label"/>
+                                    </Column>
+                                    <Column id="c2" width="auto" demandPopin="true" minScreenWidth="Tablet" hAlign="Center">
+                                        <Text id="t2" text="GRN Number" class="label"/>
+                                    </Column>
+                                    <Column id="c3" width="auto" demandPopin="true" minScreenWidth="Tablet" hAlign="Center">
+                                        <Text id="t3" text="SES Number" class="label"/>
+                                    </Column>
+                                    <Column id="c5" width="auto" demandPopin="true" minScreenWidth="Tablet" hAlign="Center">
+                                        <Text id="t5" text="Amount (*Including of all taxes) " class="label"/>
+                                    </Column>
+                                    <!-- <Column id="c7" width="auto" demandPopin="true" minScreenWidth="Tablet"  hAlign="Center">
+                                        <Text id="t7" text="Currency" class="label"/>
+                                    </Column> -->
+                                    <Column id="c4" width="auto"  demandPopin="true" minScreenWidth="Tablet" hAlign="Center">
+                                        <Text id="t4" text="Attachment" class="label"/>
+                                    </Column>
+                                </columns>
+                                    <!-- Table items -->
+                                <items>
+                                    <ColumnListItem id="cl1">
+                                        <cells>
+                                            <Input id="Invoice" liveChange="onInputChange" width="auto" editable="false" />
+                                            <Input id="Text" change="onInputChange" maxLength="80" width="auto"  editable="false" />
+                                            <MultiInput id="GRN"
+                                                        width="auto"
+                                                        showValueHelp="true"
+                                                        valueHelpRequest="onGRNHelpRequest"
+                                                        editable="false"
+                                                        >
+                                            </MultiInput>
+                                            <MultiInput id="SES"
+                                                        width="auto"
+                                                        showValueHelp="true"
+                                                        valueHelpRequest="onSESHelpRequest"
+                                                        editable="false"
+                                                        >
+                                            </MultiInput>
+                                            <!-- <Input id="GRN" liveChange="onInputChange"  width="100%" showValueHelp="true" valueHelpRequest="onGRNHelpRequest1"/> -->
+                                            <!-- <Input id="SES" liveChange="onInputChange" showValueHelp="true" valueHelpRequest="onSESHelpRequest1" width="100%"/> -->
+                                            <Input id="Amount" liveChange="onInputChange" type="Number" showSuggestion="true" width="auto" editable="false" />
+                                            <!-- <Input id="Currency" liveChange="onInputChange1" enabled="false" showValueHelp="true" valueHelpRequest="onCURRHelpRequest" showSuggestion="true" width="auto" /> -->
+                                            <VBox id="vb8" >
+                                                <HBox id ="vb1" width="auto">
+                                                    <Input id="attach" liveChange="onInputChange" width="auto" editable="false" />
+                                                    <u:FileUploader id="fileUploaderBankMandate" 
+                                                            change="handleValueChange" 
+                                                            name="myFileUpload"
+                                                            uploadUrl="/sap/opu/odata/sap/ZBTS_ODATA_SRV/ZDRAFT_UPLOADSet"
+                                                            tooltip="Upload your file to the local server" 
+                                                            uploadComplete="handleUploadCompleteMandate" 
+                                                            sendXHR="true" useMultipart="false"
+                                                            visible="false"
+                                                            placeholder="Upload Attachment"/>  
+                                                    <ToolbarSeparator id="t9"/>
+                                                    <VBox id="vb2" justifyContent="End" width="auto">
+                                                        <HBox id="hb1" width="auto" >
+                                                            <Button id="b1" type="Emphasized" text="View" press="onDocButton" width="auto"/>
+                                                            <Text id="id2" text=" ."  width="auto"/>
+                                                            <Button id="b2" type="Emphasized" text="Change" visible="false" press="onChangeButton" width="auto"></Button>
+                                                        </HBox> 
+                                                    </VBox>
+                                                    
+                                                </HBox>
+                                                <!-- <HBox id="vb5">
+                                                    <u:FileUploader id="fileUploaderBankMandate" change="handleValueChangeMandate" 
+                                                        name="myFileUpload" uploadUrl="" 
+                                                        tooltip="Upload your file to the local server" 
+                                                        uploadComplete="handleUploadCompleteMandate" 
+                                                        sendXHR="true" useMultipart="false"
+                                                        width="100%"
+                                                        visible="false"
+                                                        placeholder="Upload Attachment"/>  
+                                                </HBox> -->
+                                            </VBox>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                            <CheckBox id="VendorActive" text="Payment against Dispatch Documents" editable="false" class="CheckBox" selected="false" select="onVendorCheckSelect" />
+                        </ScrollContainer>
+                        
+                        <HBox id="ButtonHbox" justifyContent="End">
+                            <VBox id="ButtonVbox" fitContainer="true" >
+                                <Button id="DraftOnAddRow" type="Transparent" icon="sap-icon://add" press="OnAddRowPress" visible="false"/>
+                                <Button id="DraftOnDeleteRow" type="Transparent" visible="false" icon="sap-icon://less" press="OnDeleteRowPress"/>
+                            </VBox>
+                        </HBox> 
+                    </VBox>
+                </HBox>
+            </HBox>
+
+            <f:SimpleForm id="addUserForm4" maxContainerCols="1" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2">
+                <f:content>
+                    <Button id="pdfPreviewButton" text="Preview Attachment" visible="false" press="onPreviewPress" type="Emphasized"/> <!--03.09.2024-->
+                    <Button id="Edit" text="Edit" icon="sap-icon://write-new-document" press="OnEdit" type="Emphasized"/>
+                    <Button id="Save" text="Save and Submit" icon="sap-icon://save" press="OnSave" type="Emphasized" visible="false"/>
+                    <Button id="Cancel" text="Cancel" visible="false" icon="sap-icon://cancel" press="onCancel" type="Emphasized"/>
+                    <Button id="Back" text="Back" icon="sap-icon://nav-back" press="OnBack" type="Emphasized"/>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+
+        <footer >
+            <OverflowToolbar id="_IDGenOverflowToolbar1" class="sapUiMediumMarginTop">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                <Link id="_IDGenLink1" class="LinkHbox" text="Copyright © 2017 - North Eastern Electric Power Corporation Limited" target="_blank" href="https://neepco.co.in/" />
+                <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+            </OverflowToolbar>
+        </footer>
+        
+    </Page>
+</mvc:View>
